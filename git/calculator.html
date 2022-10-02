@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      #big {
+        width: 350px;
+        /* height: 400px; */
+        /* border: 1px solid black; */
+        margin: auto;
+        padding: 15px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 6px;
+      }
+      div > h1 {
+        color: teal;
+        text-align: center;
+      }
+      #big > p {
+        width: 70%;
+        height: 60px;
+        /* border: 1px solid rgb(172, 210, 4); */
+        margin: auto;
+        margin-top: 40px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 5px;
+      }
+      #big > div > div {
+        width: 25%;
+        height: 50px;
+        /* border: 1px solid rgb(172, 210, 4); */
+        margin: 20px;
+        /* grid-template-rows: repeat(3,1fr); */
+      }
+      .smal {
+        display: flex;
+      }
+      .smal > div {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .smal>div:nth-child(4){
+        background-color: black;
+        color: white;
+      }
+      #big>div:nth-child(5)>div:nth-child(1){
+        background-color: orangered;
+        color: white;
+      }
+      #big>div:nth-child(5)>div:nth-child(3){
+        background-color: black;
+        color: white;
+      }
+      
+
+
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Masai Calculator</h1>
+      <div id="big">
+        <p></p>
+
+        <div class="smal">
+          <div><h3>1</h3></div>
+          <div><h3>2</h3></div>
+          <div><h3>3</h3></div>
+          <div><h3>+</h3></div>
+        </div>
+        <div class="smal">
+            <div><h3>4</h3></div>
+            <div><h3>5</h3></div>
+            <div><h3>6</h3></div>
+            <div><h3>-</h3></div>
+          </div>
+          <div class="smal">
+            <div><h3>7</h3></div>
+            <div><h3>8</h3></div>
+            <div><h3>9</h3></div>
+            <div><h3>X</h3></div>
+          </div>
+          <div class="smal">
+            <div><h3>C</h3></div>
+            <div><h3>0</h3></div>
+            <div><h3>=</h3></div>
+            <div><h3>/</h3></div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
