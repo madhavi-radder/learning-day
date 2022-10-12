@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #parent {
+            width: 70%;
+            margin: auto;
+            background-color: white;
+            height: 600px;
+            margin-top: 200px;
+            padding: 20px;
+        }
+
+        #m {
+            width: 100%;
+            background-color: yellow;
+            height: 70px;
+            font-size: 50px;
+            margin: auto;
+
+        }
+
+        #n {
+            display: grid;
+            grid-template-columns: 700px 400px;
+            grid-template-rows: repeat(3, 150px);
+            gap: 20px 35px;
+            margin: auto;
+            margin: 20px 20px 20px 20px;
+            /* border: 1px solid red; */
+            text-align: left;
+            color: grey;
+            /* padding: 20px; */
+        }
+
+        #n>div {
+            /* border: 1px solid black; */
+            width: 100%;
+            /* margin: 20px; */
+            padding: 20px 0px;
+
+        }
+
+        #n>div:nth-child(1) {
+            grid-row: 1/span 3;
+            background-color: red;
+        }
+
+        #n>div {
+            background-color: green;
+        }
+
+        @media all and (min-width:500px) and (max-width:880px) {
+            #n {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: "a a a"
+                    "b c d";
+            }
+
+            #n>div:nth-child(1) {
+                grid-area: a;
+            }
+
+            #n>div:nth-child(2) {
+                grid-area: b;
+            }
+
+            #n>div:nth-child(3) {
+                grid-area: c;
+            }
+
+            #n>div:nth-child(4) {
+                grid-area: d;
+            }
+        }
+
+        @media all and (min-width:300) and (max-width:500px) {
+
+            #n {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: "a a a" 
+                                    "b b b" 
+                                    "c c c" 
+                                    "d d d";
+                /* grid-template-rows: repeat(4,auto); */
+            }
+
+            #n>div:nth-child(1) {
+                grid-area: a;
+                /* order: 1; */
+         }
+
+            #n>div:nth-child(2) {
+                grid-area: b;
+                /* order: 2; */
+            }
+
+            #n>div:nth-child(3) {
+                grid-area: c;
+               /* order: 3; */
+            }
+
+            #n>div:nth-child(4) {
+                grid-area: d;
+        /* order: 4; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="m">
+            Navigation
+        </div>
+        <div id="n">
+            <div>LEFT BOX</div>
+
+            <div>RIGHT BOX 1</div>
+            <div>RIGHT BOX 2</div>
+            <div>RIGHT BOX 3</div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>

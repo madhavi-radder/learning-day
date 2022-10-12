@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #main{
+        display: grid;
+        grid-template-columns: repeat(4,60px);
+        grid-template-rows: repeat(5,60px);
+        /* border: 1px solid red; */
+        /* margin-top: 150px; */
+        width: 300px;
+        gap: 20px;
+        margin: 150px auto;
+        
+        padding: 40px;
+        /* margin: 10px; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    #main>div{
+        /* border: 1px solid blue; */
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: center;
+        /* width: 60px; */
+        /* height: 30px; */
+        cursor: pointer;
+        font-size: large;
+        font-weight: bold;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+    #main>div:first-child{
+        grid-area: 1/1/1/5;
+    }
+    .n{
+        /* background:linear-gradient(to left,red,green); */
+        color: white;
+        background-color: black;
+
+    }
+    #m{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-color: red;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div></div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="n">+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div class="n">-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div class="n">x</div>
+        <div id="m">C</div>
+        <div>0</div>
+        <div class="n">=</div>
+        <div class="n">/</div>
+    </div>
+</body>
+</html>
