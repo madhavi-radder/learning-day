@@ -1,0 +1,91 @@
+/* Write your styles here  */
+#header{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+#doctors{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  /* border: 1px solid red; */
+height: 100%;
+}
+#doctors img{
+ width: 100%;
+}
+#doctors>div{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+
+}
+.m{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.m>button:nth-child(1){
+  color: blue;
+  border: 0px;
+  border-radius: 10px;
+  padding: 7px;
+
+
+}
+.m>button:nth-child(2){
+  color: white;
+  border-radius: 10px;
+  background-color: red;
+  padding: 10px;
+  border:0px;
+}
+#service{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(2,150px);
+  margin-top: 50px;
+  gap: 20px;
+  /* border: 1px solid green; */
+}
+
+/* keep media queries at the bottom */
+/* Medium screens */
+@media all and (min-width: 451px) and (max-width: 750px) {
+  #doctors{
+  
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,auto);
+    text-align: center;
+    
+   
+  }
+  #service{
+   
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,auto);
+   
+   
+  }
+}
+/* Small screens */
+@media all and (min-width: 100px) and (max-width: 450px) {
+  #doctors{
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(4,auto);
+    
+  }
+  #service{
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(6,auto);
+   
+   
+  }
+}
