@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="n" type="text" placeholder="enter 1st Number">
+    <input id="m" type="text" placeholder="enter 2nd Number">
+    <br>
+    <br>
+    <button onclick="button()">Add</button>
+    <button onclick="button1()">Subtract</button>
+    <button onclick="button2()">Multiply</button>
+    <button onclick="button3()">Divide</button>
+</body>
+</html>
+<script>
+function button2(){
+let x=document.getElementById("n").value;
+let y=document.getElementById("m").value;
+if(x==2&&y==4){
+    let mult=x*y;
+    alert(mult);
+}
+}
+function button3(){
+    let x=document.getElementById("n").value;
+let y=document.getElementById("m").value;
+if(x==8&y==4){
+    let div=x/y;
+    alert(div)
+}   
+}
+</script>
