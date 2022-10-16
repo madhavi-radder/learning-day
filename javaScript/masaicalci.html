@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            width: 290px;
+            height: 350px;
+            /* border: 1px solid green; */
+            border-radius: 10px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            grid-template-rows: repeat(5, 40px);
+            gap: 30px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 20px;
+        }
+
+        #main>div {
+            /* width: 30px; */
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            padding: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+
+        }
+
+        #main>div:nth-child(1) {
+            grid-column: 1/span 4;
+            height: 10px;
+        }
+
+        .m {
+            color: white;
+            background-color: black;
+        }
+
+        #n {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="display"></div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="m">+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div class="m">-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div class="m">*</div>
+        <div id="n">C</div>
+        <div>0</div>
+        <div class="m">=</div>
+        <div class="m">/</div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var keys=document.querySelectorAll("#main>div");
+    var bag="";
+    keys.forEach(function(el){
+        el.addEventListener("click",myCal);
+    });
+    function myCal(){
+        var targetnum=event.target.innerText;
+        if(targetnum=="C"){
+            bag="";
+            document.querySelector("#display").innerText="";
+        }
+        else if(targetnum=="="){
+            console.log(eval(bag));
+            document.querySelector("#display").innerText=eval(bag);
+        
+        }
+        else{
+            bag=bag+targetnum;
+            document.querySelector("#display").innerText=bag;
+        }
+    }
+     
+
+
+</script>

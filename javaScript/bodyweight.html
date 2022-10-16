@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            color: black;
+            background-color: aqua;
+            border: 1px solid black;
+            padding: 7px;
+            border-radius: 7px;
+            
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        button:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Check your BMI</h1>
+    <label for="">Put your weight in here(Kg):</label>
+    <br>
+    <input class="mn" id="wi" type="number" placeholder="enter your weight">
+    <br>
+    <br>
+    <label for="">Put your height in here(CM):</label>
+    <br>
+    <input class="mn" id="hi" type="number" placeholder="enter your height">
+    <br>
+    <br>
+    <button onclick="myCal()">Calculate BMI</button>
+    <h1 id="display"> </h1>
+</body>
+
+</html>
+<script>
+
+    function myCal() {
+        var height=document.querySelector("#hi").value;
+    var weight=document.querySelector("#wi").value;
+    var bmi =(weight)/(height * height);
+    if(bmi<=18.4){
+        var dis=`your bmi is ${bmi} which means you are underweight`
+    document.querySelector("#display").innerText=dis
+
+    }
+   else if((bmi>=18.5)&&(bmi<=24.9)){
+        var dis=`your bmi is ${bmi} which means you are normal weight`
+    document.querySelector("#display").innerText=dis
+
+    }
+    else if((bmi>=25)&&(bmi<=29.9)){
+        var dis=`your bmi is ${bmi} which means you are overweight`
+    document.querySelector("#display").innerText=dis
+
+    }
+    else{
+        var dis=`your bmi is ${bmi} which means you are obese`
+    document.querySelector("#display").innerText=dis
+
+    }     
+       
+    }
+
+</script>
