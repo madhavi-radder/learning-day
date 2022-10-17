@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #mini {
+        width: 500px;
+        margin: auto;
+        display: flex;
+        margin-top: 60px;
+        gap: 200px;
+      }
+      #mini > div {
+        border: 2px solid black;
+        width: 500px;
+        height: 100px;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #n {
+        width: 400px;
+        /* border: 1px solid green; */
+        height: 30px;
+        display: flex;
+        gap: 00px;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #mini > div:nth-child(1) {
+        background-color: red;
+      }
+      #mini > div:nth-child(2) {
+        background-color: green;
+      }
+      #main {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(7, 80px);
+        /* border: 1px solid red; */
+        width: 300px;
+        margin: auto;
+        margin-top: -65px;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+      }
+      #main > div {
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #main > div:nth-child(1) {
+        grid-column: 1 / span 3;
+        height: 80px;
+        background-color: #b3b3b3;
+      }
+      #main > div:nth-child(11) {
+        grid-column: 1 / span 3;
+        width: 80px;
+        margin: auto;
+        height: 80px;
+        color: white;
+        background-color: purple;
+        font-size: 30px;
+      }
+      #main > div:nth-child(12) {
+        width: 210px;
+        height: 60px;
+        text-align: center;
+        margin: auto;
+        grid-column: 1 / span 3;
+        color: white;
+        font-size: 30px;
+        background-color: black;
+      }
+      .y {
+        background-color: green;
+        font-size: 30px;
+      }
+      .x {
+        background-color: orangered;
+        font-size: 30px;
+      }
+      h3 {
+        /* width:0px; */
+        font-size: 40px;
+        text-align: center;
+        /* border: 1px solid black; */
+      }
+      #main > div:nth-child(12):hover{
+        background-color: rgb(43, 43, 43); 
+        cursor: pointer;
+      }
+      #main > div:nth-child(12):active{
+        margin-top: 1px; 
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="mini">
+      <div id="min">43</div>
+      <div id="max">2019</div>
+    </div>
+    <div id="n">
+      <h2>MIN</h2>
+      <h2>MAX</h2>
+    </div>
+    <h3>SCORE</h3>
+    <div id="main">
+      <div id="display"></div>
+      <div onclick="myCal(1)" class="y">1</div>
+      <div onclick="myCal(2)" class="x">2</div>
+      <div onclick="myCal(3)" class="y">3</div>
+      <div onclick="myCal(4)" class="x">4</div>
+      <div onclick="myCal(5)" class="x">5</div>
+      <div onclick="myCal(6)" class="x">6</div>
+      <div onclick="myCal(7)" class="y">7</div>
+      <div onclick="myCal(8)" class="x">8</div>
+      <div onclick="myCal(9)" class="y">9</div>
+      <div onclick="myCal(10)">0</div>
+      <div onclick="myfun()" id="ent">ENTER</div>
+    </div>
+  </body>
+</html>
+<script>
+  function myfun() {
+    var min = document.querySelector("#min").innerText;
+    var max = document.querySelector("#max").innerText;
+    var n = document.getElementById("display").innerText;
+    // console.log(n);
+    n = +n;
+
+    if (n != 0 && n < min) {
+      document.querySelector("#min").innerText = "";
+      document.querySelector("#min").innerText = n;
+    } else if (n != 0 && n > max) {
+      document.querySelector("#max").innerText = "";
+      document.querySelector("#max").innerText = n;
+    }
+    document.getElementById("display").innerText="";
+  }
+  function myCal(x) {
+    var n = document.getElementById("display").innerText;
+    n = n + x;
+    document.getElementById("display").innerText = n;
+  }
+</script>

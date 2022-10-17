@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      #main {
+        display: flex;
+        width: 90%;
+        height: 100px;
+        border: 1px solid green;
+        background-color: white;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        gap: 10px;
+
+        margin: 300px 70px;
+      }
+      #main > div {
+        width: 200px;
+        height: 60px;
+        /* border: 1px solid black; */ 
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        padding: 5px;
+        color: white;
+        font-size: 30px;
+        border-radius: 10px;
+      }
+      #main > div:nth-child(1) {
+        background-color: #037bff;
+      }
+      #main > div:nth-child(2) {
+        background-color: #6b757d;
+      }
+      #main > div:nth-child(3) {
+        background-color: #25a745;
+      }
+
+      #main > div:nth-child(4) {
+        background-color: #dc3645;
+      }
+      #main > div:nth-child(5) {
+        background-color: #ffc009;
+      }
+      #main > div:nth-child(6) {
+        background-color: #14a2b8;
+      }
+      #main > div:nth-child(7) {
+        background-color: #f8f9fa;
+        color: black;
+      }
+      #main > div:nth-child(8) {
+        background-color: #343a40;
+      }
+      #main > div:nth-child(9) {
+        background-color: white;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div>Primary</div>
+      <div>Secondary</div>
+      <div>Success</div>
+      <div>Danger</div>
+      <div>Warning</div>
+      <div>info</div>
+      <div>Light</div>
+      <div>Dark</div>
+      <div>Link</div>
+    </div>
+  </body>
+</html>
