@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #m{
+            
+            gap: 20px;
+            grid-template-columns: repeat(3,70px);
+            grid-template-rows: 60px 60px 60px;
+            /* border: 2px solid green; */
+            display: grid;
+            
+        }
+        #m>div{
+            border: 2px solid black;
+            background-color: blueviolet;
+            font-size: 30px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #m>div:nth-child(1){
+            grid-column: 1/span 3;
+            border-radius: 9px;
+            
+        }
+        #m>div:nth-child(6):active:hover{
+            margin-bottom: 10px;
+            background-color: chartreuse;
+        }
+        #m>div:nth-child(5):active:hover{
+            margin-bottom: 10px;
+            background-color: chartreuse;
+        }
+        #m>div:nth-child(2):active:hover{
+            margin-bottom: 10px;
+            background-color: chartreuse;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="m">
+      <div id="dis"></div>
+      <div onclick="myfun()">+</div>
+      <div onclick="myfun()">1</div>
+      <div onclick="myfun()">2</div>
+      <div onclick="myfun()">=</div>
+      <div onclick="myfun()">clear</div>
+   
+    </div>
+  </body>
+</html>
+<script>
+   var bag="";
+function myfun(targetnum){
+    var n=document.querySelector("#dis").innerText;
+    var plus=document.querySelector("#dis+div").innerText;
+   
+    var  targetnum=event.target.innerText;
+   
+    if(targetnum=="="){
+    
+        console.log(eval(bag));
+        document.querySelector("#dis").innerText=eval(bag);
+        // document.querySelector("#dis").innerText="";
+        
+        
+    }
+    else if(targetnum=="clear"){
+        bag="";
+        document.querySelector("#dis").innerText="";        
+
+        
+    }
+    else {
+        bag=bag+targetnum;
+        document.querySelector("#dis").innerText=bag;
+        // document.querySelector("#dis").innerText="";        
+
+    }
+    
+}
+   
+</script>
