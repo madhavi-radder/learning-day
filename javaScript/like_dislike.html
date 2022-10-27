@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 25px;
+            color: maroon;
+        }
+button{
+    background-color: aquamarine;
+    border: 0px;
+    padding: 8px;
+    border-radius: 5px;
+    color: blue;
+}
+    </style>
+    
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjG0WjNFsZJCYAaYe2DxelKXGjG25SKnuymN1sAWXp&s" alt="">
+<h2>likeCount <span></span></h2>
+<h1>dislikeCount <span></span></h1>
+<button onclick="myfunlike()">like</button>
+<button onclick="myfundislike()">dislike</button>
+</body>
+</html>
+<script>
+    // localStorage.setItem("likes", likeCount);
+    let likeCount=localStorage.getItem("likes")||0;
+     let dislikeCount=localStorage.getItem("dislikes")||0;
+     document.querySelector("h2>span").innerText=likeCount;
+     document.querySelector("h1>span").innerText=dislikeCount;
+
+function myfunlike(){
+likeCount=+likeCount+1;
+localStorage.setItem("likes", likeCount);
+document.querySelector("h2>span").innerText=likeCount;
+}
+function myfundislike(){
+    dislikeCount=+dislikeCount+1;
+    localStorage.setItem("dislikes", dislikeCount);
+    document.querySelector("h1>span").innerText=dislikeCount;
+
+}
+</script>
