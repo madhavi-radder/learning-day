@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button{
+        padding: 10px;
+        background-color: blueviolet;
+        color: white;
+        border-radius: 9px;
+        margin: 3px;;
+
+      }
+      button:hover{
+        background-color: palevioletred;
+        cursor: pointer;
+
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="myfun()">Store name to LS</button>
+    <button onclick="myGet()">Get name from LS</button>
+    <button onclick="mobile()">store Mobile Number from LS</button>
+    <button onclick="getmob()">Get mobile number from LS</button>
+    <button onclick="hobby()">Store Hobbies to LS</button>
+    <button onclick="gethoby()">Get hobbies from Ls</button>
+    <button onclick="data()">Store students data to LS</button>
+    <button onclick="getdata()">Get student data from LS</button> 
+    <h1></h1>
+  </body>
+</html>
+<script>
+  // part-1
+  function myfun() {
+    localStorage.setItem("username", "masaiSchool");
+  }
+// part-2
+  function myGet(){
+  document.querySelector("h1").innerText= localStorage.getItem("username");
+   
+  }
+  // part-3
+  function mobile(){
+    localStorage.setItem("mobile", "999999999")
+  }
+function getmob(){
+ var n= localStorage.getItem("mobile");
+ document.querySelector("h1").innerText=n;
+
+}
+// part-5
+let hobbies =["cricket","music"]
+function hobby(){
+  localStorage.setItem("my_hobbies",JSON.stringify(hobbies));
+}
+// part-6
+function gethoby(){
+ var x= JSON.parse(localStorage.getItem("my_hobbies"));
+  for(var i=0; i<x.length; i++){
+    console.log(x[i]);
+  } 
+}
+// part-7
+let students =
+[
+    {"name":"Nrupul",place:"Banglore"},
+    {"name":"Prateek",place:"Mumbai"}
+];
+function data(){
+  localStorage.setItem("students",JSON.stringify(students));
+}
+
+function getdata(){
+ var m= JSON.parse(localStorage.getItem("students"));
+console.log(m);
+}
+ 
+</script>
